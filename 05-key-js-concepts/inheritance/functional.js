@@ -14,12 +14,14 @@ const rufus = Object.create(dog, {
   }
 });
 
+const obj = {}
 // console.log(rufus.woof());
 // rufus.woof();
 // dog.woof()
 // rufus.howl(); 
-
-// console.log('-- -- -- wolf', wolf.prototype);
+console.log(JSON.stringify(obj, null, 4));
+// console.log(obj.prototype);
+// console.log(wolf.howl.prototype);
+// console.log(Object.getPrototypeOf(wolf));
 // console.log('-- -- -- dog', Object.prototype(dog));
-console.log('-- -- -- dog', Object.getPrototypeOf(dog));
 // console.log('-- -- -- ', Object.getOwnPropertyDescriptor(dog, 'title'));
