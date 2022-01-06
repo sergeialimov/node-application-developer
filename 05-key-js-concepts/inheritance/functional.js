@@ -11,7 +11,7 @@ const dog = Object.create(wolf, {
 const rufus = Object.create(dog, {
   name: {
     value: 'rufus the dog',
-  }
+  } 
 });
 
 const obj = {}
