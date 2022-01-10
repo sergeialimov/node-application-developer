@@ -7,13 +7,13 @@ const print = (contents) => {
 }
 
 readFile(bigFile)
-    .then((contents) => {
-      print(contents);
-    })
-return readFile(mediumFile)
   .then((contents) => {
-    print(contents);
+    print(contents)
+    return readFile(mediumFile)
   })
-return readFile(smallFile)
-  .then(print)
+  .then((contents) => {
+    print(contents)
+    return readFile(smallFile)
+  })
+  .then(print) // looks like a shortcut for a .then((contents) => { print(contents) })
   .catch(console.error)
