@@ -2,7 +2,7 @@
 // const assert = require('assert')
 // // const assert = require('assert')
 
-// // TODO: 
+// // TODO:
 // // implement a way to create a prototype chain
 // // of leopard -> lynx -> cat
 // // leopard prototype must have ONLY a hiss method
@@ -47,8 +47,7 @@
 // assert(typeof felixProtoProtoProto.hiss, 'function')
 // console.log('prototype checks passed!')
 
-
 'use strict'
 const assert = require('assert')
 
-assert(1===1, 'yeahhh')
+assert(1 === 1, 'yeahhh')

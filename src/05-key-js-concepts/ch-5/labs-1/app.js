@@ -6,5 +6,5 @@ console.log(sayHiTo('Annie')) // prints 'Hello Annie'
 console.log(sayByeTo('Dave')) // prints 'Goodbye Dave'
 
 function prefixer (str) {
-  return (name) => str + name;
+  return (name) => str + name
 }

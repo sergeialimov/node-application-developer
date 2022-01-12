@@ -1,17 +1,17 @@
-function Dog(name) {
-  this.name = name;
-  this.speak = '1';
+function Dog (name) {
+  this.name = name
+  this.speak = '1'
 }
 
-const dog = new Dog('Sharik');
+const dog = new Dog('Sharik')
 
-Dog.prototype.speak = '2';
+Dog.prototype.speak = '2'
 
 console.log(Dog.prototype)
 
-console.log('-- -- -- ', dog.speak);
-console.log('-- -- -- dog', dog);
-console.log('-- -- -- ', Object.getPrototypeOf(dog));
+console.log('-- -- -- ', dog.speak)
+console.log('-- -- -- dog', dog)
+console.log('-- -- -- ', Object.getPrototypeOf(dog))
 
 // function Dog(name) {
 //   this.name = name;
