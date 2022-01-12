@@ -2,10 +2,10 @@
 // node --inspect-brk app.js
 function f (n = 5) {
   if (n === 0) {
-    throw Error();
+    throw Error()
   }
-  debugger;
-  f (n-1)
+  debugger
+  f(n - 1)
 }
 
-f();
+f()

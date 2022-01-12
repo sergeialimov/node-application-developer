@@ -3,4 +3,3 @@ function f (n = 99) {
   f(n - 1)
 }
 f()
-

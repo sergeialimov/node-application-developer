@@ -2,7 +2,7 @@
 const assert = require('assert')
 // const assert = require('assert')
 
-// TODO: 
+// TODO:
 // implement a way to create a prototype chain
 // of leopard -> lynx -> cat
 // leopard prototype must have ONLY a hiss method
@@ -10,25 +10,24 @@ const assert = require('assert')
 // cat prototype must have ONLY a meow method
 
 const leopard = {
-  hiss: function() { console.log(`${this.name}: hsss`) },
+  hiss: function () { console.log(`${this.name}: hsss`) }
 }
 
 const lynx = Object.create(leopard, {
-    purr: {
-      value: function() { console.log(`${this.name}: prrr`) },
-    }
-  })
-
+  purr: {
+    value: function () { console.log(`${this.name}: prrr`) }
+  }
+})
 
 const cat = Object.create(lynx, {
-    meow: {
-      value: function() { console.log(`${this.name}: meow`) },
-    }
-  })
+  meow: {
+    value: function () { console.log(`${this.name}: meow`) }
+  }
+})
 
 const felix = Object.create(cat, {
   name: {
-    value: 'Felix the cat',
+    value: 'Felix the cat'
   }
 })
 felix.meow() // prints Felix the cat: meow
