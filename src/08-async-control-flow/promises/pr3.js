@@ -1,9 +1,9 @@
-const { readFile } = require('fs').promises;
+const { readFile } = require('fs').promises
 
-const [ bigFile, mediumFile, smallFile ] = Array.from(Array(3)).fill(__filename);
+const [bigFile, mediumFile, smallFile] = Array.from(Array(3)).fill(__filename)
 
 const print = (contents) => {
-  console.log(contents.toString());
+  console.log(contents.toString())
 }
 
 readFile(bigFile)

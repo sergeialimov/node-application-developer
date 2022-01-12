@@ -10,7 +10,7 @@ const print = (err, contents) => {
   console.log(contents.toString())
 }
 
-let count = files.length
+const count = files.length
 let index = 0
 
 const read = (file) => {
