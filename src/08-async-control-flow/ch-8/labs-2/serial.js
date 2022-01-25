@@ -17,25 +17,20 @@ const opB = (cb) => {
     cb(null, 'B')
   }, 250)
 }
-
 const opC = (cb) => {
   setTimeout(() => {
     cb(null, 'C')
   }, 125)
 }
 
-const opAPromisified = promisify(opA)
-const opBPromisified = promisify(opB)
-const opCPromisified = promisify(opC)
+const fun1 = promisify(opA)
+const fun2 = promisify(opB)
+const fun3 = promisify(opC)
 
+const run = async () => {
+  print(await fun1())
+  print(await fun2())
+  print(await fun3())
+}
+run()
 
-const run1 = async () => await opAPromisified(print);
-
-const run2 = async () => await opBPromisified(print);
-
-const run3 = async () => await opCPromisified(print);
-
-
-run1()
-run2()
-run3()
