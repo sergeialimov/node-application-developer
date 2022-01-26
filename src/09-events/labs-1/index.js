@@ -18,7 +18,4 @@ function listener () {
 }
 
 
-ee.on('tick', listener)
-ee.once('tick', () => {
-  ee.removeListener('tick', listener)
-})
+ee.once('tick', listener)
