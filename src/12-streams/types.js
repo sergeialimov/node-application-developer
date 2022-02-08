@@ -1,0 +1,21 @@
+/**
+ * Stream
+ * Readable
+ * Writeable
+ * Duplex
+ * Transform
+ * PassThrough
+ */
+
+// Stream inherits from EventEmitter
+
+// node -p "stream + ''"
+function Stream (opts) {
+  EE.call(this, opts) // EE - EventEmitter?
+}
+
+node -p "stream.prototype"
+EventEmitter { pipe: Function (anonymous) } // NOTE: in the example result is: Stream, not EE
+
+
+node -p "Object.getPrototypeOf(stream.prototype)"
