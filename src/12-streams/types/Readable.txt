@@ -1,0 +1,33 @@
+Readble streams 
+
+HTTP responses, on the client
+HTTP requests, on the server
+fs read streams
+zlib streams
+crypto streams
+TCD sockets
+child process stdout and stderr
+process.stdin
+
+All Readable streams implement stream.Readable class
+
+Two modes of Streams – flowing and paused.
+
+Methods:
+stream.read()
+stream.pipe() to send data to Writable
+stream.pause()
+stream.resume()
+stream.unpipe() – if there are no pipe destinations. Multiple pipe destinations may be removed by unpipe()
+
+Three states
+readable.readableFlowing = null
+readable.readableFlowing = false
+readable.reedableFowing = true
+
+When null, no mechanism for consuming the stream's data is provided. The stream will not generate data.
+While in this state, attaching a listener for the 'data' event, calling the readable.pipe(), or calling the readable.resume() will switch readable.readableFlowing to true,
+causing the Readable to begin actively emitting events as data is generated.
+
+Calling readable.pause() or readable.unpipe() will cause the readable.readableFlowing = false, temporary halting the flowing of events but not halting the generation of data. 
+While in this state, attaching a listener for the 'data' event will not switch readable.readbleFlowing() to true\
