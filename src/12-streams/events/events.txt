@@ -1,0 +1,9 @@
+data – Readable
+end – Readable
+finish - emitted by Writable, when there's nothing to write
+close – common to all Streams
+error – common to all Streams
+
+
+error may be emitterd when Stream encounters an error
+close – emitted when stream is destroyed which may happen if an underlying resourse is unexpectedly closed
