@@ -11,25 +11,7 @@ process.stdout, process.stderr
 
 
 
-const myStream = getWritableStreamSomehow();
-myStream.write('some data');
-myStream.write('some more data');
-myStream.end('done writing data');
-
-
 ## Events ##
-pipe
-src <stream.Readable> source stream is piping to this writable to it's set of destinations 
-
-const writer = getWritableStreamSomehow()
-const reader = getReadableStreamSomehow()
-
-write.on('pipe', (src) => {
-  console.log('smth is piping')
-  assert.equal(src, reader)
-})
-
-reader.pipe(writer)
 
 unpipe
 src <stream.Readable> The source stream unpiped this writable
@@ -42,19 +24,7 @@ After 'error', no further events other than 'close' should be emitted(including 
 close
 is emitted when the stream and any of its underlying resources have been closed
 
-finish
-The 'finish' event is emitted after the stream.end() method has been called, and all data has been flushed to the underlying system
 
-const writer = getWritableStreamSomehow()
-for (let i = 0; i < 100; i++) {
-  writer.write(`hello ${i}`)
-}
-
-writer.on('finish', () => {
-  console.log('all writes are now completed')
-})
-
-writer.end('the end')
 
 Methods
 cork() forces all written data to be buffered in memory. The buffered data will be flushed when either the stream.uncork() or stream.end() methods are called
@@ -66,5 +36,8 @@ uncork() flushes all data buffered since cork() was called
 When using cork() and uncork() to manage the buffering of writes to a stream, it is recommended that calls to uncork() be reffered using process.nextTick(). Doing so allows batching of all writable.write() calls that occur within a given Node.js event loop phase.
 
 destroy()
+
+
+
 
 write()

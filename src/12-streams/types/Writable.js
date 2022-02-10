@@ -1,3 +1,12 @@
+// #1
+const myStream = getWritableStreamSomehow();
+myStream.write('some data');
+myStream.write('some more data');
+myStream.end('done writing data');
+
+
+
+// #2
 const { PassThrough, Writable } = require('stream')
 
 const pass = new PassThrough()
@@ -10,3 +19,6 @@ pass.unpipe(writable)
 pass.on('data', (chunk) => { console.log(chunk.toString()); });
 pass.write('ok')
 pass.resume()
+
+
+
