@@ -1,0 +1,14 @@
+Duplex streams are streams that implement both the Readable and Writable interfaces
+
+Examples
+
+TCP sockets
+zlib streams
+crypto streams
+
+duplex.allowHalfOpen – boolean
+
+if false then the stream will automatically end the readable side ends.
+Set initially by the allowHalfOpen constructor option, which defaults to false
+
+
