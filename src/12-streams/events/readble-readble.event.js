@@ -5,7 +5,7 @@
  */
 
 
-const readble = getReadableSomehow();
+const readble = getReadableStreamSomehow();
 readable.on('readable', function() {
   // There is some data to read now.
   let data;
