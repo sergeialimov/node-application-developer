@@ -1,0 +1,11 @@
+There are two stream modes:
+
+Binary streams
+Object streams
+
+The mode of stream is determined by its objectMode option passed when the stream is instantiated.
+The default objectMode is false, which means the default mode is binary.
+Binary mode streams only read or write Buffer instances (Buffer were covered in Chapter 11 – Using "Buffers")
+
+In object mode streams can read or write Javascript objects and all primitives (strings, numbers) except null,
+so the name is a slight misnomer. In Node core, most if not all object mode streams deal with strings.

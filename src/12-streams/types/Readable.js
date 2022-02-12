@@ -5,12 +5,13 @@
 // stream.resume()
 // stream.unpipe() – if there are no pipe destinations. Multiple pipe destinations may be removed by unpipe()
 
-
-
-const readable = getReadableStreamSomehow()
+'use strict'
+const fs = require('fs')
+const readable = fs.createReadStream(__filename)
 
 readable.on('data', (chunk) => {
   console.log(`Received ${chunk.length} bytes of data`)
+  console.log(chunk)
 })
 
 readable.on('end', () => {
