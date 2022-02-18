@@ -42,16 +42,30 @@ writer().catch((err) => {
 
 
 function exercise (project) {
-  const files = new Set(fs.readdirSync(project))
   fs.watch(project, (evt, filename) => {
     try { 
-      const filepath = join(project, filename)
-      const stat = fs.statSync(filepath)
+      const files = new Set(fs.readdirSync('./project'))
+      const filtered = Array.from(files).filter((file) => {
+        const filePath = join(__dirname, 'project', file)
+        const fileStat = fs.statSync(filePath)
 
-      // TODO - only set the answer variable if the filepath
-      // is both newly created AND does not point to a directory
+        if (!fileStat.isDirectory()) {
+          return file
+        }
+      })
+      const resultFileName = filtered.values().next().value;
+      let resultFilePath = join(__dirname, 'project', resultFileName)
+      const statOfTheFirstFile = fs.statSync(resultFilePath)
 
-      answer = filepath
+      filtered.forEach((file) => {
+        const filePath = join(__dirname, 'project', file)
+        const fileStat = fs.statSync(filePath)
+
+        if ((fileStat.mtime > statOfTheFirstFile.mtime) && !fileStat.isDirectory()) {
+          resultFilePath = filePath
+        }
+      })
+      answer = resultFilePath
     } catch (err) {
 
     } 
