@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node uppercase.test.js"
+    "test": "node_modules/.bin/jest uppercase.test.js"
   },
   "keywords": [],
   "author": "",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
 }
