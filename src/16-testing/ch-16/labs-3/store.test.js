@@ -15,15 +15,15 @@ describe('store', () => {
   });
 
   it('should run store with incorrect buffer', async () => {
-    try {
-      const value = 123;
-      const fn = await store(value);
-      console.log('fn', fn)
-      // assert.throws(fn)
-      // assert.strictEqual(fn, 'input must be a buffer')
-      process.exit(1)
-    } catch (err) {
-      console.error(err);
-    }
+    await expect(store(123))
+      .rejects
+      .toStrictEqual(Error('input must be a buffer'))
+    await expect(store({}))
+      .rejects
+      .toStrictEqual(Error('input must be a buffer'))
+      await expect(store(null))
+      .rejects
+      .toStrictEqual(Error('input must be a buffer'))
+
   });
 });
