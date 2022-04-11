@@ -1,7 +1,9 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
-// The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects,
-// with the value or reason from that promise.
 
+/**
+ * The Promise.race() method returns a promise that fulfills or rejects as soon as one of
+ * the promises in an iterable fulfills or rejects, with the value or reason from that promise.
+ */
 
 const promise1 = new Promise((resolve, reject) => {
   setTimeout(resolve, 500, 'one');
@@ -15,4 +17,5 @@ Promise.race([promise1, promise2]).then((value) => {
   console.log(value);
   // Both resolve, but promise2 is faster
 });
+
 // expected output: "two"
