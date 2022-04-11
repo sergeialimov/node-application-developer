@@ -1,4 +1,4 @@
-const buffer = Buffer.from('hello world')
+const buffer = Buffer.from('test', 'utf8')
 
 
 Buffer.from('👀')
