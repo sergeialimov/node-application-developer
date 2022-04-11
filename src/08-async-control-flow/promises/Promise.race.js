@@ -10,12 +10,15 @@ const promise1 = new Promise((resolve, reject) => {
 });
 
 const promise2 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 100, 'two');
+  setTimeout(resolve, 300, 'two');
 });
 
-Promise.race([promise1, promise2]).then((value) => {
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(reject, 200, 'tree')
+  // setTimeout(reject, 400, 'tree') // That wouldn't fail as it's not first
+});
+
+Promise.race([promise1, promise2, promise3]).then((value) => {
   console.log(value);
-  // Both resolve, but promise2 is faster
+  // Result: fail. Because of #3
 });
-
-// expected output: "two"
