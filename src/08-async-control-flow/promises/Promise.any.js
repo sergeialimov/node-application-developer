@@ -12,3 +12,22 @@
  * then the returned promise is rejected with an AggregateError, a new subclass of Error
  * that groups together individual errors.
  */
+
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 500, 'one');
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 300, 'two');
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(reject, 100, 'tree');
+});
+
+Promise.any([promise1, promise2, promise3]).then((value) => {
+  console.log(value);
+  // #1 and #2 are resolved, #3 rejected
+  // #2 resolved faster
+  // Result is: two (#2)
+});
