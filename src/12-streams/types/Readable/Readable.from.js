@@ -5,7 +5,8 @@ async function * generate() {
   yield 'streams'
 }
 
-const readable = Readable.from(generate())
+const gen = generate(); // Generator {}
+const readable = Readable.from(gen)
 
 readable.on('data', (chunk) => {
   console.log('chunk', chunk)

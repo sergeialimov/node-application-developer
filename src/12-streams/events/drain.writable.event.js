@@ -1,7 +1,8 @@
 /**
  drain
  *
- If a call to stream.write(chunk) returns false, the 'drain' event will be emitted when it is appropriate to resume writing data to the stream
+ If a call to stream.write(chunk) returns false, the 'drain' event will be emitted when it is
+ appropriate to resume writing data to the stream
  
  Write data to the supplied writable stream one million times
  Be attentive to back-pressure
